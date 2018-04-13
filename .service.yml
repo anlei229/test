@@ -1,0 +1,11 @@
+name: "test"
+kind: "Service"
+specVersion: "v3"
+accessPoint:
+  contextPath: "/test/v1"
+  apiVersion: "v1"
+  connectors:
+  - protocol: "http"
+    scheme: "http"
+    port: 8080
+    name: "api"

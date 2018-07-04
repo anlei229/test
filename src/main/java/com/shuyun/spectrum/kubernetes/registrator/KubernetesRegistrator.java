@@ -17,7 +17,6 @@ import com.shuyun.spectrum.kubernetes.registrator.k8s.KuberneteService;
 public class KubernetesRegistrator {
 
 	public static void main(String[] args) throws Exception {
-		Properties properties = System.getProperties();
 		KuberneteService service = new KuberneteService();
 		service.getService();
 		

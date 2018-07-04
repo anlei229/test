@@ -31,6 +31,7 @@ public class KuberneteClientUtils {
 
 	public static KubernetesClient getKuberneteClient() throws Exception
 	{
+		LOGGER.error("system:"+System.getProperties());
 		synchronized(LOCK)
 		{
 			if(client!=null)

@@ -13,7 +13,6 @@ import com.shuyun.spectrum.kubernetes.registrator.KubernetesRegistrator;
 
 import io.fabric8.kubernetes.client.Config;
 import io.fabric8.kubernetes.client.ConfigBuilder;
-import io.fabric8.kubernetes.client.DefaultKubernetesClient;
 import io.fabric8.kubernetes.client.KubernetesClient;
 import okhttp3.TlsVersion;
 
@@ -44,8 +43,7 @@ public class KuberneteClientUtils {
 			String clientCertFile = pro.getProperty("system.k8s.clientCertFile");
 			String clientKeyFile = pro.getProperty("system.k8s.clientKeyFile");
 			String namespace = pro.getProperty("system.k8s.namespace");
-			client =  new  DefaultKubernetesClient(getConfig(namespace, serverUrls, caCertFile, clientCertFile, clientKeyFile));
-			//client = new K8sClient(getConfig(namespace, serverUrls, caCertFile, clientCertFile, clientKeyFile));
+			client = new K8sClient(getConfig(namespace, serverUrls, caCertFile, clientCertFile, clientKeyFile));
 			return client;
 		}
 	}
@@ -60,7 +58,8 @@ public class KuberneteClientUtils {
 		{
 			properties.put(x, y);
 		});
-		System.getenv().forEach((x,y)->{
+		System.getenv().forEach((x,y)->
+		{
 			properties.put(x, y);
 		});
 		return properties;

@@ -31,10 +31,6 @@ public class KuberneteClientUtils {
 
 	public static KubernetesClient getKuberneteClient() throws Exception
 	{
-		System.getenv().forEach((x,y)->{
-			LOGGER.error("system:x->"+x+",y->"+y);
-		});
-		
 		synchronized(LOCK)
 		{
 			if(client!=null)
@@ -60,6 +56,9 @@ public class KuberneteClientUtils {
 		properties.load(resourceAsStream);
 		System.getProperties().forEach((x,y)->
 		{
+			properties.put(x, y);
+		});
+		System.getenv().forEach((x,y)->{
 			properties.put(x, y);
 		});
 		return properties;

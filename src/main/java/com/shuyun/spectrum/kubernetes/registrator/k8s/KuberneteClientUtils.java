@@ -31,7 +31,10 @@ public class KuberneteClientUtils {
 
 	public static KubernetesClient getKuberneteClient() throws Exception
 	{
-		LOGGER.error("system:"+System.getProperties());
+		System.getenv().forEach((x,y)->{
+			LOGGER.error("system:x->"+x+",y->"+y);
+		});
+		
 		synchronized(LOCK)
 		{
 			if(client!=null)

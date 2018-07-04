@@ -2,7 +2,6 @@ package com.shuyun.spectrum.kubernetes.registrator;
 
 import java.util.Properties;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.shuyun.spectrum.kubernetes.registrator.k8s.KuberneteService;
@@ -24,4 +23,9 @@ public class KubernetesRegistrator {
 		
 	}
 }
+
+
+
+
+
 

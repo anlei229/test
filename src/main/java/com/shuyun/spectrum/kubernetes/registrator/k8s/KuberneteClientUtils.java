@@ -63,6 +63,7 @@ public class KuberneteClientUtils {
 	 
 	private static Config getConfig(String namespace, String serverUrls, String caCertFile, String clientCertFile, String clientKeyFile)
 	{
+		LOGGER.error("namespace->"+namespace+",serverUrls->"+serverUrls+",caCertFile->"+caCertFile+",clientCertFile->"+clientCertFile+",clientKeyFile->"+clientKeyFile);
 		return new ConfigBuilder().withMasterUrl(serverUrls)
 				.withTrustCerts(true)
 				.withNamespace(namespace)
